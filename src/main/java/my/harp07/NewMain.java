@@ -44,10 +44,12 @@ public class NewMain {
             System.out.println("OIV.toDetailString()="+bufOIV.toDetailString());
             System.out.println("OIV.toString()="+bufOIV.toString()); 
             System.out.println("OIV.getSymbol()="+bufOIV.getSymbol());
-            System.out.println("OIV.getSymbol().getText()="+bufOIV.getSymbol().getText());
-            System.out.println("syntax="+StringUtils.substringBetween(bufOIV.getSymbol().getText(), "SYNTAX ", "ACCESS"));
-            System.out.println("access="+StringUtils.substringBetween(bufOIV.getSymbol().getText(), "ACCESS", "STATUS"));
-            System.out.println("info="+StringUtils.substringBetween(bufOIV.getSymbol().getText(), "DESCRIPTION", "::="));
+            ///
+            String bufSTR=bufOIV.getSymbol().getText();
+            System.out.println("OIV.getSymbol().getText()="+bufSTR);
+            System.out.println("syntax="+StringUtils.substringBetween(bufSTR, "SYNTAX ", "ACCESS"));
+            System.out.println("access="+StringUtils.substringBetween(bufSTR, "ACCESS", "STATUS"));
+            System.out.println("inform="+StringUtils.substringBetween(bufSTR, "DESCRIPTION", "::="));
         } catch (MibLoaderException ex) {
             Logger.getLogger(NewMain.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
